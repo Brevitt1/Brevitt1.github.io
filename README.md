@@ -7,8 +7,8 @@
 
 ## In class Assignments
 
-##### - ICA1
-##### - ICA2
+##### - [ICA1](ica/ICA1.pdf)
+##### - [ICA2](ica/ICA2.pdf)
 ##### - ICA3
 ##### - ICA4
 ##### - ICA5
@@ -25,8 +25,8 @@
 
 ## Weekly Assignments
 
-##### - WA1
-##### - WA2
+##### - [WA1](https://brevitt1.github.io/wa/wa1.1.html)
+##### - [WA2](https://brevitt1.github.io/wa/wa2.html)
 ##### - WA3
 ##### - WA4
 ##### - WA5
