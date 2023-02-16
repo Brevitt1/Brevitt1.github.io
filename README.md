@@ -11,7 +11,7 @@
 ##### - [ICA2](ica/ICA2.pdf)
 ##### - [ICA3](ica/ica3a.html)
 ##### - [ICA4](ica/ica4.html)
-##### - ICA5
+##### - [ICA5](https://brevitt1.github.io/ica/ica5/ica5.html)
 ##### - ICA6
 ##### - ICA7
 ##### - ICA8
