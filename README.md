@@ -29,7 +29,7 @@
 ##### - [WA2](https://brevitt1.github.io/wa/wa2.html)
 ##### - [WA3](https://brevitt1.github.io/wa/wa3.html)
 ##### - [WA4](https://brevitt1.github.io/business-card/chris.html)
-##### - WA5
+##### - [WA5](https://brevitt1.github.io/wa/wa5/wa5.html)
 ##### - WA6
 ##### - WA7
 ##### - WA8
