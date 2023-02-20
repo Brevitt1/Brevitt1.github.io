@@ -1,0 +1,50 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: rgb(248, 0, 0);
+  }
+  
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size:xx-large
+  }
+  
+  
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size:xx-large
+  }
+  
+  .container1 {
+    position: relative;
+    text-align: center;
+    color: rgb(211, 226, 0);
+  }
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size:xx-large
+  }
+  
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size:xx-large
+  }
+  
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:xx-large
+  }
+
+ 
