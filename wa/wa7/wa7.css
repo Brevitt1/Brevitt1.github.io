@@ -1,0 +1,75 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(209, 234, 249);
+    font-family: cursive;
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: rgb(212, 183, 239);
+}
+
+
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:rgb(223, 0, 194);
+}
+
+
+img{
+    width:30vw;
+    height: 30vh;
+}
+
+#red-ball{
+    background-color: rgb(116, 0, 110);
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    left:5vw;
+    top:0;
+}
+
+#red-ball:hover {
+    background-color: rgb(231, 204, 0);
+}
+
+#red-ball1{
+    background-color: rgb(116, 0, 110);
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    left:5vw;
+    top:0;
+
+    animation-duration: 3s;
+    animation-name: red-ball1tomove;
+    animation-iteration-count: infinite;
+}
+
+@keyframes red-ball1tomove{
+    from{
+        margin-left: 100%;
+        width: 300%;
+    }
+    75% {
+        font-size: 300%;
+        margin-left: 25%;
+        width: 150%;
+      }
+    
+    to{
+        margin-left: 0%;
+        width: 100%;
+    
+    }
+    }
