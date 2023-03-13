@@ -1,0 +1,80 @@
+body {
+	background-color: #fff;
+	color: #000000;
+	margin: 0;
+	font-family: 'Sorts Mill Goudy', serif;
+}
+img {
+	max-width: 100%;
+	display: block;
+	border: 10px solid rgb(255, 255, 255);
+
+}
+
+
+header {
+	background-color: #ffffff;
+	color: #000000;
+	padding: 10px;
+	text-align: center;
+}
+
+
+nav {
+    background-color: rgb(255, 255, 255);
+    padding: .5em;
+    top: 0;
+    position: sticky;
+  }
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav a {
+	color: #000000;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #fff;
+	background-color: #ffffff;
+}
+
+main {
+	margin: 20px;
+}
+
+footer {
+	background-color: #ffffff;
+	color: #000000;
+	padding: 10px;
+	text-align: center;
+	
+}
+
+.myartphotos {
+    list-style: none;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+  }
+
+  .logo {
+    font-size: 250%;
+    padding: 50px 20px;
+    margin: 0 auto;
+    max-width: 980px;
+    font-family: 'Sorts Mill Goudy', serif;
+  }
