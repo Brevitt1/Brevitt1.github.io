@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #button{
+            border: 10px solid darkmagenta;
+
+            border-radius: 40px;
+            background-color: magenta;
+            padding: 25px 50px;
+            width: 250px;
+            font-size: 50px;
+        }
+#image img{
+   height: 100px;
+   width: 100px;
+   position: absolute;
+}
+
+h2{
+    color: red;
+}
+    </style>
+</head>
+<body>
+
+    <div id="button">
+        <p>Click me!</p>
+    </div>
+   
+<div id="image">
+ <img src="/img/geteaten.png">
+</div>
+
+<h2>That is all.</h2>
+
+<script>
+    console.log("Hello, world")
+    let btn = document.querySelector("#button");
+    //console.log(btn);
+    btn.addEventListener('click', changeBtn);
+
+
+    function changeBtn() {
+        //console.log("this workded");
+        btn.textContent = "Yeah"
+        btn.style.backgroundColor = "darkmagenta";
+        btn.style.border = "2px solid magenta";
+        btn.style.color = "white";
+    }
+
+    let image = document.querySelector("#image img")
+    let h2 = document.querySelector("h2")
+
+    image.addEventListener('click', changePos);   
+
+    function changePos() {
+        image.style.left = "200px"
+        image.style.top = "100px"
+        image.style.height = "300px"
+        
+        h2.style.transform = 'rotate(-90deg)';
+    }
+
+    h2.addEventListener('click', bigger);
+
+    function bigger(){
+        h2.style.fontSize = "100px"
+    }
+
+</script>
+
+</body>
+</html>
