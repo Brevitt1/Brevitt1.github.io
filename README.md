@@ -15,9 +15,9 @@
 ##### - [ICA6](https://brevitt1.github.io/ica/ica6/ica6-part1.html)
 ##### - [ICA7](https://brevitt1.github.io/ica/ica7.html)
 ##### - ICA8
-##### - ICA9
-##### - ICA10
-##### - ICA11
+##### - [ICA9](https://brevitt1.github.io/ica/ica9.html)
+##### - [ICA10](http://Brevitt1.github.io/ica/ica10/ica10.html)
+##### - [ICA11](http://Brevitt1.github.io/ica/ica11/ica11.html)
 ##### - ICA12
 ##### - ICA13
 ##### - ICA14
@@ -33,7 +33,7 @@
 ##### - [WA6](https://brevitt1.github.io/wa/wa6/)
 ##### - [WA7](https://brevitt1.github.io/wa/wa7/week7.html)
 ##### - WA8
-##### - WA9
+##### - [WA9](https://brevitt1.github.io/wa/wa9/index.html)
 ##### - WA10
 ##### - WA11
 ##### - WA12
