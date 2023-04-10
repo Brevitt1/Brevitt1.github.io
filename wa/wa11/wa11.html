@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke Generator</title>
+    <link rel="stylesheet" href="wa11.css">
+  </head>
+  <body>
+    <div class="app">
+      <header>Joke Generator</header>
+      <section class="jokes">
+        <div class="joke-text" id="js-joke-text"></div>
+        <div class="answer-container hidden" id="js-answer-container">
+          <div class="answer-text" id="js-answer-text"></div>
+        </div>
+      </section>
+      <section class="controls">
+        <button type="button" id="js-new-joke" class="new-joke button">
+          Get a new joke
+        </button>
+      <div id="js-loading" class="loading hidden">
+          <div class="spinner"></div>
+          <p>Loading...</p>
+      </div>
+        <button
+          type="button"
+          id="js-show-answer"
+          class="show-answer button hidden"
+        >
+          Show me the answer
+        </button>
+      </section>
+    </div>
+    <script src="wa11.js"></script>
+  </body>
+</html>
