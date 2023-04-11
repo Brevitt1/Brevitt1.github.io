@@ -71,16 +71,16 @@ class Ball {
       }
   }
   const balls = [];
-
-  while (balls.length < 25) {
-    const size = random(10, 20);
+//how many balls do we want?
+  while (balls.length < 25) { 
+    const size = random(10, 20); //determining the hypothetical smallest and largest ball we could have
     const ball = new Ball(
       // ball position always drawn at least one ball width
       // away from the edge of the canvas, to avoid drawing errors
-      random(0 + size, width - size),
-      random(0 + size, height - size),
-      random(-7, 7),
-      random(-7, 7),
+      random(0 + size, width - size), //random position
+      random(0 + size, height - size), //random position
+      random(-7, 7), //random speed x
+      random(-7, 7), //random speed y
       randomRGB(),
       size
     );
@@ -96,7 +96,7 @@ class Ball {
       ball.draw();
       ball.update();
       ball.collisionDetect();
-      
+
     }
   
     requestAnimationFrame(loop);
