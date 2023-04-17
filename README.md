@@ -36,7 +36,7 @@
 ##### - [WA9](https://brevitt1.github.io/wa/wa9/index.html)
 ##### - WA10
 ##### - [WA11](https://brevitt1.github.io/wa/wa11/wa11.html)
-##### - WA12
+##### - [WA12](https://brevitt1.github.io/wa/wa12/wa12.html)
 ##### - WA13
 ##### - WA14
 ##### - WA15
