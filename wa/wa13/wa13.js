@@ -1,74 +1,133 @@
 
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
 
-function check() {
-    console.log('test');
+
+var centerX = canvas.width / 2;
+var centerY = canvas.height / 2;
+var radius = canvas.width / 2;
+
+
+function drawCircle() {
+  
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+  ctx.fillStyle = "#ccc";
+  ctx.fill();
+
+  
+  var gradient = ctx.createRadialGradient(centerX, centerY, radius / 4, centerX, centerY, radius);
+  gradient.addColorStop(0, "green");
+  gradient.addColorStop(0.5, "yellow");
+  gradient.addColorStop(1, "red");
+
+  
+  ctx.globalCompositeOperation = "source-in";
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-function submit() {
-    alert('Your volume is now: ' + output.textContent);
+
+drawCircle();
+
+
+canvas.addEventListener("mousemove", function(event) {
+  
+  var angle = Math.atan2(event.offsetY - centerY, event.offsetX - centerX);
+  angle = angle < 0 ? angle + 2 * Math.PI : angle;
+
+  
+  var volume = angle / (2 * Math.PI);
+
+  
+  ctx.globalCompositeOperation = "source-over";
+  drawCircle();
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, -Math.PI / 2, angle - Math.PI / 2);
+  ctx.lineTo(centerX, centerY);
+  ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+  ctx.fill();
+});
+
+
+canvas.addEventListener("mousedown", function(event) {
+  canvas.addEventListener("mousemove", erase);
+});
+
+canvas.addEventListener("mouseup", function(event) {
+  canvas.removeEventListener("mousemove", erase);
+});
+
+
+function erase(event) {
+  
+  var angle = Math.atan2(event.offsetY - centerY, event.offsetX - centerX);
+  angle = angle < 0 ? angle + 2 * Math.PI : angle;
+
+  
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, -Math.PI / 2, angle - Math.PI / 2);
+  ctx.lineTo(centerX, centerY);
+  ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+  ctx.fill();
 }
 
-function reset() {
-    outputInt = 0;
-    output.textContent = outputInt;
+
+var plusIcon = document.querySelector(".slider-labels :nth-child(3)");
+var minusIcon = document.querySelector(".slider-labels :nth-child(1)");
+
+
+function increaseVolume() {
+  
+  var currentAngle = (volume * 2 * Math.PI) - Math.PI / 2;
+
+  
+  var newAngle = currentAngle + (0.1 * 2 * Math.PI);
+
+  
+  newAngle = Math.min(newAngle, 1 * 2 * Math.PI - Math.PI / 2);
+
+  
+  volume = newAngle / (2 * Math.PI);
+
+  
+  ctx.globalCompositeOperation = "source-over";
+  drawCircle();
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, -Math.PI / 2, newAngle);
+  ctx.lineTo(centerX, centerY);
+  ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+  ctx.fill();
 }
 
-function minus() {
-    if (outputInt > 0) {
-    outputInt -=1;
-    output.textContent = outputInt; }
-    
+
+function decreaseVolume() {
+  
+  var currentAngle = (volume * 2 * Math.PI) - Math.PI / 2;
+
+  
+  var newAngle = currentAngle - (0.1 * 2 * Math.PI);
+
+  
+  newAngle = Math.max(newAngle, 0 - Math.PI / 2);
+
+  
+  volume = newAngle / (2 * Math.PI);
+
+  
+  ctx.globalCompositeOperation = "source-over";
+  drawCircle();
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, -Math.PI / 2, newAngle);
+  ctx.lineTo(centerX, centerY);
+  ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+  ctx.fill();
 }
 
-function plus() {
-    if (outputInt < 100) {
-    outputInt +=1;
-    output.textContent = outputInt;
-    }
-}
 
-function random() {
-    outputInt = randomNumber(0, 100);
-    output.textContent = outputInt;
-}
-
-function randomNumber(min, max) {
-    const num = Math.floor(Math.random() * (max - min + 1)) + min;
-    return num;
-  }
-
-
-
-const output = document.querySelector('.output');
-let outputInt = parseInt(output.textContent);
-console.log(outputInt);
-
-const minusButton = document.querySelector('.minus-button').addEventListener('click', minus);
-const plusButton = document.querySelector('.plus-button').addEventListener('click', plus);
-const resetButton = document.querySelector('.reset-button').addEventListener('click', reset);
-const randomButton = document.querySelector('.random-button').addEventListener('click', random);
-const submitButton = document.querySelector('.submit-button').addEventListener('click', submit);
-
-
-/* const button = document.querySelector('.button');
-const output = document.querySelector('.output');
-let phone_content = document.querySelector('.phone');
-
-button.addEventListener('click', updateOutput);
-
-function updateOutput() {
-    output.textContent = phone_content.value;
-    alert(phone_content.value);
-}
-*/
-
-
-var slider = document.getElementById("myRange");
-var sliderSubmit = document.querySelector(".slider-submit-button").addEventListener('click', update);
-var sliderOutput = document.querySelector(".slider-output");
-
-
-// Update the current slider value (each time you drag the slider handle)
-function update() {
-  sliderOutput.textContent = slider.value;
-}
+plusIcon.addEventListener("click", increaseVolume);
+minusIcon.addEventListener("click", decreaseVolume);
