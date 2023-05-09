@@ -3,7 +3,7 @@
 ## Projects
 ##### - HTML
 ##### - [CSS](https://brevitt1.github.io/html-websight/index.html)
-##### - JS
+##### - [JS](https://brevitt1.github.io/final/final.html)
 
 ## In class Assignments
 
