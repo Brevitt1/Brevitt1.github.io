@@ -38,5 +38,5 @@
 ##### - [WA11](https://brevitt1.github.io/wa/wa11/wa11.html)
 ##### - [WA12](https://brevitt1.github.io/wa/wa12/wa12.html)
 ##### - [WA13](https://Brevitt1.github.io/wa/wa13/wa13.html)
-##### - WA14
+##### - [WA14](https://api.mapbox.com/styles/v1/brevitt/clgwgi0pv003401rh38dibu9e.html?title=false&access_token=pk.eyJ1IjoiYnJldml0dCIsImEiOiJjbGd3Zm1iZncwMmF6M3FwMmQycXhpMThkIn0.KGbsTE7jyWd1piFZBMuIFg&zoomwheel=false#5.03/52.79/-2.26)
 ##### - WA15
