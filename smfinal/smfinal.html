@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #map {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        // Data for pesticide concentration and underserved regions
+        var pesticideData = [
+            { region: 'Region A', pesticide: 'Pesticide 1', concentration: 10, lat: 39.5501, lng: -111.5472, underserved: false },
+            { region: 'Region B', pesticide: 'Pesticide 2', concentration: 5, lat: 34.0522, lng: -118.2437, underserved: true },
+            { region: 'Region C', pesticide: 'Pesticide 3', concentration: 8, lat: 47.6062, lng: -122.3321, underserved: false },
+            { region: 'Region D', pesticide: 'Pesticide 4', concentration: 3, lat: 41.8781, lng: -87.6298, underserved: true },
+            { region: 'Region E', pesticide: 'Pesticide 5', concentration: 12, lat: 29.7604, lng: -95.3698, underserved: false },
+            { region: 'Region F', pesticide: 'Pesticide 6', concentration: 6, lat: 30.2672, lng: -97.7431, underserved: true },
+            { region: 'Region G', pesticide: 'Pesticide 7', concentration: 9, lat: 32.7157, lng: -117.1611, underserved: false },
+            { region: 'Region H', pesticide: 'Pesticide 8', concentration: 2, lat: 25.7617, lng: -80.1918, underserved: false },
+            { region: 'Region I', pesticide: 'Pesticide 9', concentration: 7, lat: 39.9612, lng: -82.9988, underserved: true },
+            { region: 'Region J', pesticide: 'Pesticide 10', concentration: 4, lat: 39.7684, lng: -86.1581, underserved: false },
+            { region: 'Region K', pesticide: 'Pesticide 11', concentration: 10, lat: 39.2904, lng: -76.6122, underserved: true },
+            { region: 'Region L', pesticide: 'Pesticide 12', concentration: 8, lat: 34.0522, lng: -118.2437, underserved: false },
+            { region: 'Region M', pesticide: 'Pesticide 13', concentration: 6, lat: 37.7749, lng: -122.4194, underserved: false },
+            { region: 'Region N', pesticide: 'Pesticide 14', concentration: 5, lat: 32.7157, lng: -117.1611, underserved: true },
+            { region: 'Region O', pesticide: 'Pesticide 15', concentration: 7, lat: 47.6038, lng: -122.3301, underserved: false },
+            { region: 'Region P', pesticide: 'Pesticide 16', concentration: 9, lat: 47.0379, lng: -122.9007, underserved: true },
+            { region: 'Region Q', pesticide: 'Pesticide 17', concentration: 3, lat: 45.5202, lng: -122.6742, underserved: false },
+            { region: 'Region R', pesticide: 'Pesticide 18', concentration: 6, lat: 40.7128, lng: -74.0060, underserved: false },
+            { region: 'Region S', pesticide: 'Pesticide 19', concentration: 4, lat: 33.7490, lng: -84.3880, underserved: true },
+            { region: 'Region T', pesticide: 'Pesticide 20', concentration: 5, lat: 41.8781, lng: -87.6298, underserved: false },
+            { region: 'Region U', pesticide: 'Pesticide 21', concentration: 11, lat: 38.9072, lng: -77.0369, underserved: false },
+            { region: 'Region V', pesticide: 'Pesticide 22', concentration: 7, lat: 39.9526, lng: -75.1652, underserved: true },
+            { region: 'Region W', pesticide: 'Pesticide 23', concentration: 3, lat: 42.3601, lng: -71.0589, underserved: false },
+            { region: 'Region X', pesticide: 'Pesticide 24', concentration: 9, lat: 42.6526, lng: -73.7562, underserved: true },
+            { region: 'Region Y', pesticide: 'Pesticide 25', concentration: 6, lat: 35.2271, lng: -80.8431, underserved: false },
+            { region: 'Region Z', pesticide: 'Pesticide 26', concentration: 4, lat: 39.7684, lng: -86.1581, underserved: false },
+
+            // Add more regions and pesticide concentration data as needed
+        ];
+
+        // Initialize the map
+        function initMap() {
+            // Create the map object
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 37.7749, lng: -122.4194 }, // Set the center of the map to San Francisco
+                zoom: 8 // Set the initial zoom level
+            });
+
+            // Add markers to the map
+            pesticideData.forEach(function (data) {
+                // Create a marker for each data point
+                var marker = new google.maps.Marker({
+                    position: { lat: data.lat, lng: data.lng },
+                    map: map,
+                    label: data.concentration.toString(), // Display the concentration value as the marker label
+                    icon: getMarkerIcon(data.concentration, data.underserved) // Set the marker icon based on concentration and underserved status
+                });
+            });
+        }
+
+        // Function to determine marker icon based on concentration and underserved status
+        function getMarkerIcon(concentration, underserved) {
+            if (underserved) {
+                return {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    fillColor: 'red',
+                    fillOpacity: 1,
+                    strokeWeight: 0,
+                    scale: 8
+                };
+            } else if (concentration >= 10) {
+                return 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+            } else if (concentration >= 5) {
+                return 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+            } else {
+                return 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+            }
+        }
+    </script>
+    <!-- Add the Google Maps API script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlDEzBSq-URZIKfZ6Bi_Sn7pLVJJO4F1E&callback=initMap" async defer></script>
+</body>
+</html>
